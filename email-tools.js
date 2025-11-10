@@ -10,9 +10,9 @@ console.log('[EMAIL-TOOLS] unlayer.createViewer exists:', !!(window.unlayer && w
 console.log('========================================');
 
 // IMPORTANT: This script runs in iframe context, set ASSETS_URL here
-// Hardcode the URL since we can't access parent window
-const ASSETS_URL = 'https://api.site426.tangram-studio.com/assets';
-console.log('[EMAIL-TOOLS] ASSETS_URL:', ASSETS_URL);
+// IMPORTANT: Use global ASSETS_URL set by parent window
+// If not available, use default value
+const ASSETS_URL = window.ASSETS_URL || 'https://api.site426.tangram-studio.com/assets';
 
 // Check if Unlayer is available
 if (!window.unlayer) {
